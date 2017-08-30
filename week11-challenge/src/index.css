@@ -1,0 +1,19 @@
+body {
+  background-image: url(https://images.pexels.com/photos/236118/pexels-photo-236118.jpeg?h=350&auto=compress&cs=tinysrgb);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.assignedList{
+  width: 100px;
+  height: 100px;
+  border: 2px blue solid;
+}
+.unAssigned{
+  width: 100px;
+  height: 100px;
+  border: 2px red solid;
+}
