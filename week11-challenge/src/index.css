@@ -1,5 +1,5 @@
 body {
-  background-image: url(https://images.pexels.com/photos/236118/pexels-photo-236118.jpeg?h=350&auto=compress&cs=tinysrgb);
+  background-image: url(https://images.pexels.com/photos/301943/pexels-photo-301943.jpeg?w=940&h=650&auto=compress&cs=tinysrgb);
   background-repeat: no-repeat;
   background-size: cover;
   margin: 0;
@@ -7,13 +7,17 @@ body {
   font-family: sans-serif;
 }
 
-.assignedList{
-  width: 100px;
-  height: 100px;
-  border: 2px blue solid;
+.Team1, .Team2{
+  width: 300px;
+  height: 300px;
+  border: 5px blue solid;
+  float: right;
+  margin-right: 272px;
 }
+
 .unAssigned{
-  width: 100px;
-  height: 100px;
-  border: 2px red solid;
+  width: 300px;
+  height: 300px;
+  border: 5px red solid;
+  margin: 0 auto;
 }

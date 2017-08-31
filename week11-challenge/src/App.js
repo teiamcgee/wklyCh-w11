@@ -18,8 +18,19 @@ class App extends Component {
     return <UnAssigned name={user.name} />
   })
     return (
+      <div>
       <div className="unAssigned">
+      <h1>UnAssigned</h1>
       {unAssignedList}
+      </div>
+      <div className="Team1">
+      <h1>Team 1</h1>
+      {Team1}
+      </div>
+      <div className="Team2">
+      <h1>Team 2</h1>
+      {Team2}
+      </div>
       </div>
     );
   }

@@ -2,11 +2,12 @@ import React from 'react';
 
 
 function UnAssigned(props){
-  return
-  <div className= "unAssigned">
-  <h2>{props.name}<button>x</button></h2>
-</div>
-};
+  return(
+    <div>
+      <h2>{props.name}<button>x</button></h2>
+  </div>
+  )
+  };
 
 
 
@@ -16,4 +17,4 @@ function UnAssigned(props){
 
 
 
-export default "UnAssigned";
+export default UnAssigned;
