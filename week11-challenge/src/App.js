@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import UnAssigned from './UnAssigned'
+import UnAssigned from "./UnAssigned";
+import Team1 from './Team1';
+import Team2 from './Team2';
 
 class App extends Component {
   render() {

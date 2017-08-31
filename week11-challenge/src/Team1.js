@@ -1,6 +1,6 @@
 import React from "react"
 
-function Assigned(){
+function Team1(props){
 return <div className ="assignedList">
           <h2>{props.name}</h2>
       </div>
@@ -9,4 +9,4 @@ return <div className ="assignedList">
 }
 
 
-export default Assigned;
+export default Team1;
