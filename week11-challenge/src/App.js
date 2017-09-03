@@ -29,26 +29,49 @@ class App extends Component {
    }
    ]};
   }
-  changeStatus = (id,isCompleted = true) => {
-    const users = this.state.users.slice()
-    const index = this.state.users.findIndex(function(user){
-      return user.id === id
-    })
-    users[index].isCompleted = isCompleted
-    this.setState({users})
-  }
-  Team1HandleClick(index){
-    let team1 = this.state.unAssignedgroup.slice();
-  }
-  Team2HandleClick()
-  UnAssignedHandleClick = (teamId, isSelected = true)=>{
 
+  Team1HandleClick(teamId, isSelected = true) => {
+      const unAssigned = this .state.unAssignedgroup.slice()
+      const index = this.state.unAssignedgroup.findIndex(function(unAssignedgroup){
+        return unAssignedgroup.teamId === teamId
+      })
+      unAssignedgroup{unAssigned}.isSelected = isSelected
+      this.setState({unAssignedgroup})
+  }
+
+  Team2HandleClick(teamId, isSelected = true) => {
+      const unAssigned = this .state.unAssignedgroup.slice()
+      const index = this.state.unAssignedgroup.findIndex(function(unAssignedgroup){
+        return unAssignedgroup.teamId === teamId
+      })
+      unAssignedgroup{unAssigned}.isSelected = isSelected
+      this.setState({unAssignedgroup})
+  }
+
+  UnAssignedHandleClick = (teamId, isSelected = true) => {
+    const unAssigned = this .state.users.slice()
+    const index = this.state.users.findIndex(function(unAssignedgroup){
+      return unAssignedgroup.teamId === teamId
+    })
+    unAssignedgroup{unAssigned}.isSelected = isSelected
+    this.setState({unAssignedgroup})
   }
   render() {
 
 
   const unAssignedList = unAssignedgroup.map(function(user){
-    return <UnAssigned name={user.name} />
+    return <UnAssigned
+    name={unAssignedgroup.name}
+    teamId = {unAssignedgroup.teamId}
+    isSelected = {unAssignedgroup.isSelected}
+     />
+
+ const team1 = unAssignedgroup.map(function(user){
+   return <UnAssigned
+   name={team1.name}
+   teamId = {team2.teamId}
+   isSelected = {team1.isSelected}
+    />
   })
     return (
       <div>
