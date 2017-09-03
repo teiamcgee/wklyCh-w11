@@ -1,23 +1,27 @@
 body {
-  background-image: url(https://images.pexels.com/photos/301943/pexels-photo-301943.jpeg?w=940&h=650&auto=compress&cs=tinysrgb);
+  background-image: url(https://images.pexels.com/photos/186076/pexels-photo-186076.jpeg?h=350&auto=compress&cs=tinysrgb);
   background-repeat: no-repeat;
   background-size: cover;
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  color: red;
+  text-align: center;
 }
 
 .Team1, .Team2{
-  width: 300px;
-  height: 300px;
-  border: 5px blue solid;
+  width: 350px;
+  height: 350px;
+  border: 5px white solid;
   float: right;
-  margin-right: 272px;
+  margin-right: 236px;
+  background-color: rgba(36, 44, 158, .5);
 }
 
 .unAssigned{
-  width: 300px;
-  height: 300px;
+  width: 350px;
+  height: 350px;
   border: 5px red solid;
   margin: 0 auto;
+  background-color: rgba(36, 44, 158, .5);
 }
