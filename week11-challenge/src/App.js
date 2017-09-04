@@ -33,29 +33,29 @@ class App extends Component {
    };
   }
 
-  Team1HandleClick(teamId, isSelected = true) {
+  Team1HandleClick(teamId,isSelected = true) {
       const team1 = this.state.unAssignedgroup.slice()
       const index = this.state.unAssignedgroup.findIndex(function(user){
         return this.user.teamId === teamId
       })
 
       this.unAssignedgroup[index].isSelected = isSelected
-      this.setState({unAssignedgroup})
+      this.setState({team1})
 
       this.unAssignedgroup[index].teamId = 2
-      this.setState({unAssignedgroup})
+      this.setState({team1})
   }
 
-  Team2HandleClick(teamId, isSelected = true) {
+  Team2HandleClick(teamId,isSelected = true) {
       const team2 = this.state.unAssignedgroup.slice()
       const index = this.state.unAssignedgroup.findIndex(function(user){
         return user.teamId === teamId
       })
-      unAssignedgroup[index].isSelected = isSelected
-      this.setState({unAssignedgroup})
+      this.unAssignedgroup[index].isSelected = isSelected
+      this.setState({team2})
 
-      unAssignedgroup[index].teamId = 3
-      this.setState({unAssignedgroup})
+      this.unAssignedgroup[index].teamId = 3
+      this.setState({team2})
   }
 
 
@@ -64,8 +64,8 @@ class App extends Component {
     const index = this.state.unAssignedgroup.findIndex(function(user){
       return user.teamId === teamId
     })
-    this.unAssignedgroup[index].isSelected = isSelected
-    this.setState({unAssignedgroup})
+    this.unAssigned[index].isSelected = isSelected
+    this.setState({unAssigned})
   }
 
   render() {
@@ -73,25 +73,25 @@ class App extends Component {
 
   const unAssignedList = this.state.unAssignedgroup.map(function(user){
     return <UnAssigned
-    name={UnAssigned.name}
-    teamId = {UnAssigned.teamId}
-    isSelected = {UnAssigned.isSelected}
+    name={user.name}
+    teamId = {user.teamId}
+    isSelected = {user.isSelected}
      />
    })
 
   const team1 = this.state.unAssignedgroup.map(function(user){
    return <team1
-   name={Team1.name}
-   teamId = {Team1.teamId}
-   isSelected = {Team1.isSelected}
+   name={user.name}
+   teamId = {user.teamId}
+   isSelected = {user.isSelected}
    />
    })
 
    const team2 = this.state.unAssignedgroup.map(function(user){
      return <team2
-     name={Team2.name}
-     teamId = {Team2.teamId}
-     isSelected = {Team2.isSelected}
+     name={user.name}
+     teamId = {user.teamId}
+     isSelected = {user.isSelected}
     />
   })
     return (
