@@ -7,7 +7,8 @@ import Team2 from './Team2';
 class App extends Component {
   constructor(){
     super();
-    this.state = {unAssignedgroup : [
+    this.state = {
+      unAssignedgroup : [
      {name: "Martin Lawerance",
       teamId: 1,
       isSelected: false
@@ -32,70 +33,85 @@ class App extends Component {
    };
   }
 
-  Team1HandleClick(teamId, isSelected = true) => {
+  Team1HandleClick(teamId, isSelected = true) {
       const team1 = this.state.unAssignedgroup.slice()
-      const index = this.state.unAssignedgroup.findIndex(function(unAssignedgroup){
-        return unAssignedgroup.teamId === teamId
+      const index = this.state.unAssignedgroup.findIndex(function(user){
+        return this.user.teamId === teamId
       })
-      unAssignedgroup[index].isSelected = isSelected
+
+      this.unAssignedgroup[index].isSelected = isSelected
       this.setState({unAssignedgroup})
 
-      unAssignedgroup[index].teamId = 2
+      this.unAssignedgroup[index].teamId = 2
       this.setState({unAssignedgroup})
   }
 
-  Team2HandleClick(teamId, isSelected = true) => {
+  Team2HandleClick(teamId, isSelected = true) {
       const team2 = this.state.unAssignedgroup.slice()
-      const index = this.state.unAssignedgroup.findIndex(function(unAssignedgroup){
-        return unAssignedgroup.teamId === teamId
+      const index = this.state.unAssignedgroup.findIndex(function(user){
+        return user.teamId === teamId
       })
       unAssignedgroup[index].isSelected = isSelected
       this.setState({unAssignedgroup})
+
+      unAssignedgroup[index].teamId = 3
+      this.setState({unAssignedgroup})
   }
 
-  UnAssignedHandleClick = (teamId, isSelected = true) => {
-    const unAssigned = this.state.users.slice()
-    const index = this.state.users.findIndex(function(unAssignedgroup){
-      return unAssignedgroup.teamId === teamId
+
+  UnAssignedHandleClick (teamId, isSelected = true) {
+    const unAssigned = this.state.unAssignedgroup.slice()
+    const index = this.state.unAssignedgroup.findIndex(function(user){
+      return user.teamId === teamId
     })
-    unAssignedgroup[index].isSelected = isSelected
+    this.unAssignedgroup[index].isSelected = isSelected
     this.setState({unAssignedgroup})
   }
 
   render() {
 
 
-  const unAssignedList = unAssignedgroup.map(function(user){
+  const unAssignedList = this.state.unAssignedgroup.map(function(user){
     return <UnAssigned
-    name={unAssignedgroup.name}
-    teamId = {unAssignedgroup.teamId}
-    isSelected = {unAssignedgroup.isSelected}
+    name={UnAssigned.name}
+    teamId = {UnAssigned.teamId}
+    isSelected = {UnAssigned.isSelected}
      />
+   })
 
- const team1 = unAssignedgroup.map(function(user){
-   return <UnAssigned
-   name={team1.name}
-   teamId = {team2.teamId}
-   isSelected = {team1.isSelected}
+  const team1 = this.state.unAssignedgroup.map(function(user){
+   return <team1
+   name={Team1.name}
+   teamId = {Team1.teamId}
+   isSelected = {Team1.isSelected}
+   />
+   })
+
+   const team2 = this.state.unAssignedgroup.map(function(user){
+     return <team2
+     name={Team2.name}
+     teamId = {Team2.teamId}
+     isSelected = {Team2.isSelected}
     />
   })
     return (
       <div>
-      <div className="unAssigned">
-      <h1>UnAssigned</h1>
-      {unAssignedList}
-      </div>
-      <div className="Team2">
-      <h1>Team 2</h1>
-      {Team1}
-      </div>
-      <div className="Team1">
-      <h1>Team 1</h1>
-      {Team2}
-      </div>
+        <div className="unAssigned">
+          <h1>UnAssigned</h1>
+          {unAssignedList}
+        </div>
+        <div className="Team2">
+          <h1>Team 2</h1>
+          {Team1}
+        </div>
+        <div className="Team1">
+          <h1>Team 1</h1>
+          {Team2}
+        </div>
       </div>
     );
   }
 }
+
 
 export default App;
