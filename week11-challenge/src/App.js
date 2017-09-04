@@ -27,37 +27,38 @@ class App extends Component {
     },
      {name: "Halli Berry",
       teamId: 1,
-     isSelected: false
+      isSelected: false
    }
     ]
    };
   }
 
-  Team1HandleClick(teamId,isSelected = true) {
+  Team1HandleClick = (teamId,isSelected = true) => {
       const team1 = this.state.unAssignedgroup.slice()
       const index = this.state.unAssignedgroup.findIndex(function(user){
-        return this.user.teamId === 2
+        return user.teamId = 2
       })
-      this.unAssignedgroup[index].isSelected = isSelected
+
+      team1[index].isSelected = isSelected
       this.setState({team1})
   }
 
-  Team2HandleClick(teamId,isSelected = true)  {
+  Team2HandleClick = (teamId,isSelected = true) => {
       const team2 = this.state.unAssignedgroup.slice()
       const index = this.state.unAssignedgroup.findIndex(function(user){
-        return user.teamId === 3
+        return user.teamId = 3
       })
-      this.unAssignedgroup[index].isSelected = isSelected
+      team2[index].isSelected = isSelected
       this.setState({team2})
   }
 
 
-  UnAssignedHandleClick (teamId, isSelected = true)  {
+  UnAssignedHandleClick = (teamId, isSelected = true) => {
     const unAssigned = this.state.unAssignedgroup.slice()
     const index = this.state.unAssignedgroup.findIndex(function(user){
       return user.teamId === teamId
     })
-    this.unAssigned[index].isSelected = isSelected
+    unAssigned[index].isSelected = isSelected
     this.setState({unAssigned})
   }
 
