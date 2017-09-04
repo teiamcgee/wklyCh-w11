@@ -9,9 +9,10 @@ class App extends Component {
     super();
     this.state = {unAssignedgroup : [
      {name: "Martin Lawerance",
-      teamId: 1
+      teamId: 1,
+      isSelected: false
    },
-     {name: "Teenia Marie"
+     {name: "Teenia Marie",
      teamId: 1,
      isSelected: false
    },
@@ -20,42 +21,47 @@ class App extends Component {
      isSelected: false
    },
      {name: "Michael Jackson",
-      teamId: 1
+      teamId: 1,
       isSelected: false,
     },
      {name: "Halli Berry",
       teamId: 1,
      isSelected: false
    }
-   ]};
+    ]
+   };
   }
 
   Team1HandleClick(teamId, isSelected = true) => {
-      const unAssigned = this .state.unAssignedgroup.slice()
+      const team1 = this.state.unAssignedgroup.slice()
       const index = this.state.unAssignedgroup.findIndex(function(unAssignedgroup){
         return unAssignedgroup.teamId === teamId
       })
-      unAssignedgroup{unAssigned}.isSelected = isSelected
+      unAssignedgroup[index].isSelected = isSelected
+      this.setState({unAssignedgroup})
+
+      unAssignedgroup[index].teamId = 2
       this.setState({unAssignedgroup})
   }
 
   Team2HandleClick(teamId, isSelected = true) => {
-      const unAssigned = this .state.unAssignedgroup.slice()
+      const team2 = this.state.unAssignedgroup.slice()
       const index = this.state.unAssignedgroup.findIndex(function(unAssignedgroup){
         return unAssignedgroup.teamId === teamId
       })
-      unAssignedgroup{unAssigned}.isSelected = isSelected
+      unAssignedgroup[index].isSelected = isSelected
       this.setState({unAssignedgroup})
   }
 
   UnAssignedHandleClick = (teamId, isSelected = true) => {
-    const unAssigned = this .state.users.slice()
+    const unAssigned = this.state.users.slice()
     const index = this.state.users.findIndex(function(unAssignedgroup){
       return unAssignedgroup.teamId === teamId
     })
-    unAssignedgroup{unAssigned}.isSelected = isSelected
+    unAssignedgroup[index].isSelected = isSelected
     this.setState({unAssignedgroup})
   }
+
   render() {
 
 
