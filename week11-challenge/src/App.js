@@ -36,7 +36,7 @@ class App extends Component {
   Team1HandleClick = (teamId,isSelected = true) => {
       const team1 = this.state.unAssignedgroup.slice()
       const index = this.state.unAssignedgroup.findIndex(function(user){
-        return user.teamId = 2
+        return user.teamId = teamId
       })
 
       team1[index].isSelected = isSelected
@@ -46,9 +46,10 @@ class App extends Component {
   Team2HandleClick = (teamId,isSelected = true) => {
       const team2 = this.state.unAssignedgroup.slice()
       const index = this.state.unAssignedgroup.findIndex(function(user){
-        return user.teamId = 3
+        return user.teamId = teamId
       })
       team2[index].isSelected = isSelected
+
       this.setState({team2})
   }
 
